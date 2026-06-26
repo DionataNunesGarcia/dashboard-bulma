@@ -1,0 +1,307 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e7] [cursor=pointer]: ﵑ
+        - text: 
+        - textbox "Search everywhere..." [ref=e10]
+      - generic [ref=e14] [cursor=pointer]: 
+      - text:             
+    - complementary [ref=e15]:
+      - generic [ref=e16]:
+        - text: 
+        - generic [ref=e18]: Admin One
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: General
+        - list [ref=e21]:
+          - listitem [ref=e22]:
+            - link " Dashboard" [ref=e23] [cursor=pointer]:
+              - /url: "#/"
+              - generic [ref=e25]: 
+              - generic [ref=e26]: Dashboard
+        - paragraph [ref=e27]: Examples
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - link " Tables" [ref=e30] [cursor=pointer]:
+              - /url: "#/tables"
+              - generic [ref=e32]: 
+              - generic [ref=e33]: Tables
+          - listitem [ref=e34]:
+            - link "喇 Forms" [ref=e35] [cursor=pointer]:
+              - /url: "#/forms"
+              - generic [ref=e37]: 喇
+              - generic [ref=e38]: Forms
+          - listitem [ref=e39]:
+            - link " Profile" [ref=e40] [cursor=pointer]:
+              - /url: "#/profile"
+              - generic [ref=e42]: 
+              - generic [ref=e43]: Profile
+          - listitem [ref=e44]:
+            - link " Login" [ref=e45] [cursor=pointer]:
+              - /url: "#/login"
+              - generic [ref=e47]: 
+              - generic [ref=e48]: Login
+          - listitem [ref=e49]:
+            - generic [ref=e50] [cursor=pointer]:
+              - generic [ref=e52]: 
+              - generic [ref=e53]: Submenus
+              - generic [ref=e56]: 
+        - paragraph [ref=e57]: About
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - link " Premium" [ref=e60] [cursor=pointer]:
+              - /url: https://justboil.me/bulma-admin-template/one/
+              - generic [ref=e62]: 
+              - generic [ref=e63]: Premium
+          - listitem [ref=e64]:
+            - link " GitHub" [ref=e65] [cursor=pointer]:
+              - /url: https://github.com/vikdiesel/admin-one-vue-bulma-dashboard
+              - generic [ref=e67]: 
+              - generic [ref=e68]: GitHub
+    - generic [ref=e69]:
+      - generic [ref=e71]:
+        - list [ref=e74]:
+          - listitem [ref=e75]: Admin /
+          - listitem [ref=e76]: Dashboard
+        - link " Star on GitHub" [ref=e80] [cursor=pointer]:
+          - /url: https://github.com/vikdiesel/admin-one-vue-bulma-dashboard
+          - generic [ref=e82]: 
+          - generic [ref=e83]: Star on GitHub
+      - heading "Dashboard" [level=1] [ref=e89]
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - generic [ref=e94]: Please star this project on GitHub
+          - link " GitHub" [ref=e96] [cursor=pointer]:
+            - /url: https://github.com/vikdiesel/admin-one-vue-bulma-dashboard
+            - generic [ref=e98]: 
+            - generic [ref=e99]: GitHub
+        - generic [ref=e100]:
+          - generic [ref=e104]:
+            - generic [ref=e106]:
+              - heading "Clients" [level=3] [ref=e107]
+              - heading "130" [level=1] [ref=e108]:
+                - generic [ref=e109]: "130"
+            - generic [ref=e113]: 
+          - generic [ref=e117]:
+            - generic [ref=e119]:
+              - heading "Sales" [level=3] [ref=e120]
+              - heading "$1,945" [level=1] [ref=e121]:
+                - generic [ref=e122]: $1,945
+            - generic [ref=e126]: 
+          - generic [ref=e130]:
+            - generic [ref=e132]:
+              - heading "Performance" [level=3] [ref=e133]
+              - heading "65%" [level=1] [ref=e134]:
+                - generic [ref=e135]: 65%
+            - generic [ref=e139]: ﺰ
+        - generic [ref=e141]:
+          - paragraph [ref=e142]:
+            - generic [ref=e144]: 
+            - text: Performance
+          - link "more options" [ref=e145] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e147]: 
+        - generic [ref=e152]:
+          - paragraph [ref=e154]: Clients
+          - generic [ref=e157]:
+            - text: 
+            - table [ref=e159]:
+              - rowgroup [ref=e160]:
+                - row "Name  Company City Progress Created" [ref=e161]:
+                  - columnheader [ref=e162]
+                  - columnheader "Name " [ref=e163] [cursor=pointer]:
+                    - generic [ref=e165]:
+                      - text: Name
+                      - generic [ref=e167]: 
+                  - columnheader "Company" [ref=e168] [cursor=pointer]:
+                    - generic [ref=e170]: Company
+                  - columnheader "City" [ref=e171] [cursor=pointer]:
+                    - generic [ref=e173]: City
+                  - columnheader "Progress" [ref=e174] [cursor=pointer]:
+                    - generic [ref=e176]: Progress
+                  - columnheader "Created" [ref=e177]:
+                    - generic [ref=e179]: Created
+                  - columnheader [ref=e180]
+              - rowgroup [ref=e181]:
+                - row "Adrienne Mayer III Kozey, McLaughlin and Kuhn Howardbury 39 Mar 29, 2021  喝" [ref=e182]:
+                  - cell [ref=e183]:
+                    - img [ref=e185]
+                  - cell "Adrienne Mayer III" [ref=e186]
+                  - cell "Kozey, McLaughlin and Kuhn" [ref=e187]
+                  - cell "Howardbury" [ref=e188]
+                  - cell "39" [ref=e189]:
+                    - progressbar [ref=e190]: "39"
+                  - cell "Mar 29, 2021" [ref=e191]
+                  - cell " 喝" [ref=e192]:
+                    - generic [ref=e193]:
+                      - link "" [ref=e194] [cursor=pointer]:
+                        - /url: "#/client/48"
+                        - generic [ref=e196]: 
+                      - button "喝" [ref=e197] [cursor=pointer]:
+                        - generic [ref=e200]: 喝
+                - row "Cameron Lind Tremblay, Padberg and Pouros Naderview 59 Sep 14, 2021  喝" [ref=e201]:
+                  - cell [ref=e202]:
+                    - img [ref=e204]
+                  - cell "Cameron Lind" [ref=e205]
+                  - cell "Tremblay, Padberg and Pouros" [ref=e206]
+                  - cell "Naderview" [ref=e207]
+                  - cell "59" [ref=e208]:
+                    - progressbar [ref=e209]: "59"
+                  - cell "Sep 14, 2021" [ref=e210]
+                  - cell " 喝" [ref=e211]:
+                    - generic [ref=e212]:
+                      - link "" [ref=e213] [cursor=pointer]:
+                        - /url: "#/client/5"
+                        - generic [ref=e215]: 
+                      - button "喝" [ref=e216] [cursor=pointer]:
+                        - generic [ref=e219]: 喝
+                - row "Hope Howe Nolan Inc Paristown 68 Dec 1, 2021  喝" [ref=e220]:
+                  - cell [ref=e221]:
+                    - img [ref=e223]
+                  - cell "Hope Howe" [ref=e224]
+                  - cell "Nolan Inc" [ref=e225]
+                  - cell "Paristown" [ref=e226]
+                  - cell "68" [ref=e227]:
+                    - progressbar [ref=e228]: "68"
+                  - cell "Dec 1, 2021" [ref=e229]
+                  - cell " 喝" [ref=e230]:
+                    - generic [ref=e231]:
+                      - link "" [ref=e232] [cursor=pointer]:
+                        - /url: "#/client/11"
+                        - generic [ref=e234]: 
+                      - button "喝" [ref=e235] [cursor=pointer]:
+                        - generic [ref=e238]: 喝
+                - row "Howell Hand Kiehn-Green Emelyside 70 Mar 3, 2021  喝" [ref=e239]:
+                  - cell [ref=e240]:
+                    - img [ref=e242]
+                  - cell "Howell Hand" [ref=e243]
+                  - cell "Kiehn-Green" [ref=e244]
+                  - cell "Emelyside" [ref=e245]
+                  - cell "70" [ref=e246]:
+                    - progressbar [ref=e247]: "70"
+                  - cell "Mar 3, 2021" [ref=e248]
+                  - cell " 喝" [ref=e249]:
+                    - generic [ref=e250]:
+                      - link "" [ref=e251] [cursor=pointer]:
+                        - /url: "#/client/19"
+                        - generic [ref=e253]: 
+                      - button "喝" [ref=e254] [cursor=pointer]:
+                        - generic [ref=e257]: 喝
+                - row "Justice O'Reilly Lakin-Muller New Kacie 38 Mar 27, 2021  喝" [ref=e258]:
+                  - cell [ref=e259]:
+                    - img [ref=e261]
+                  - cell "Justice O'Reilly" [ref=e262]
+                  - cell "Lakin-Muller" [ref=e263]
+                  - cell "New Kacie" [ref=e264]
+                  - cell "38" [ref=e265]:
+                    - progressbar [ref=e266]: "38"
+                  - cell "Mar 27, 2021" [ref=e267]
+                  - cell " 喝" [ref=e268]:
+                    - generic [ref=e269]:
+                      - link "" [ref=e270] [cursor=pointer]:
+                        - /url: "#/client/34"
+                        - generic [ref=e272]: 
+                      - button "喝" [ref=e273] [cursor=pointer]:
+                        - generic [ref=e276]: 喝
+                - row "Kim Weimann Brown-Lueilwitz New Emie 38 May 4, 2021  喝" [ref=e277]:
+                  - cell [ref=e278]:
+                    - img [ref=e280]
+                  - cell "Kim Weimann" [ref=e281]
+                  - cell "Brown-Lueilwitz" [ref=e282]
+                  - cell "New Emie" [ref=e283]
+                  - cell "38" [ref=e284]:
+                    - progressbar [ref=e285]: "38"
+                  - cell "May 4, 2021" [ref=e286]
+                  - cell " 喝" [ref=e287]:
+                    - generic [ref=e288]:
+                      - link "" [ref=e289] [cursor=pointer]:
+                        - /url: "#/client/22"
+                        - generic [ref=e291]: 
+                      - button "喝" [ref=e292] [cursor=pointer]:
+                        - generic [ref=e295]: 喝
+                - row "Lenna Smitham King Inc McCulloughfort 59 Oct 8, 2021  喝" [ref=e296]:
+                  - cell [ref=e297]:
+                    - img [ref=e299]
+                  - cell "Lenna Smitham" [ref=e300]
+                  - cell "King Inc" [ref=e301]
+                  - cell "McCulloughfort" [ref=e302]
+                  - cell "59" [ref=e303]:
+                    - progressbar [ref=e304]: "59"
+                  - cell "Oct 8, 2021" [ref=e305]
+                  - cell " 喝" [ref=e306]:
+                    - generic [ref=e307]:
+                      - link "" [ref=e308] [cursor=pointer]:
+                        - /url: "#/client/47"
+                        - generic [ref=e310]: 
+                      - button "喝" [ref=e311] [cursor=pointer]:
+                        - generic [ref=e314]: 喝
+                - row "Lorna Christiansen Altenwerth-Friesen Port Elbertland 36 Mar 9, 2021  喝" [ref=e315]:
+                  - cell [ref=e316]:
+                    - img [ref=e318]
+                  - cell "Lorna Christiansen" [ref=e319]
+                  - cell "Altenwerth-Friesen" [ref=e320]
+                  - cell "Port Elbertland" [ref=e321]
+                  - cell "36" [ref=e322]:
+                    - progressbar [ref=e323]: "36"
+                  - cell "Mar 9, 2021" [ref=e324]
+                  - cell " 喝" [ref=e325]:
+                    - generic [ref=e326]:
+                      - link "" [ref=e327] [cursor=pointer]:
+                        - /url: "#/client/15"
+                        - generic [ref=e329]: 
+                      - button "喝" [ref=e330] [cursor=pointer]:
+                        - generic [ref=e333]: 喝
+                - row "Mr. Garrison Friesen V VonRueden, Rippin and Pfeffer Port Cieloport 39 Oct 19, 2021  喝" [ref=e334]:
+                  - cell [ref=e335]:
+                    - img [ref=e337]
+                  - cell "Mr. Garrison Friesen V" [ref=e338]
+                  - cell "VonRueden, Rippin and Pfeffer" [ref=e339]
+                  - cell "Port Cieloport" [ref=e340]
+                  - cell "39" [ref=e341]:
+                    - progressbar [ref=e342]: "39"
+                  - cell "Oct 19, 2021" [ref=e343]
+                  - cell " 喝" [ref=e344]:
+                    - generic [ref=e345]:
+                      - link "" [ref=e346] [cursor=pointer]:
+                        - /url: "#/client/46"
+                        - generic [ref=e348]: 
+                      - button "喝" [ref=e349] [cursor=pointer]:
+                        - generic [ref=e352]: 喝
+                - row "Mr. Julien Ebert Cormier LLC South Serenaburgh 29 Jun 25, 2021  喝" [ref=e353]:
+                  - cell [ref=e354]:
+                    - img [ref=e356]
+                  - cell "Mr. Julien Ebert" [ref=e357]
+                  - cell "Cormier LLC" [ref=e358]
+                  - cell "South Serenaburgh" [ref=e359]
+                  - cell "29" [ref=e360]:
+                    - progressbar [ref=e361]: "29"
+                  - cell "Jun 25, 2021" [ref=e362]
+                  - cell " 喝" [ref=e363]:
+                    - generic [ref=e364]:
+                      - link "" [ref=e365] [cursor=pointer]:
+                        - /url: "#/client/20"
+                        - generic [ref=e367]: 
+                      - button "喝" [ref=e368] [cursor=pointer]:
+                        - generic [ref=e371]: 喝
+            - navigation [ref=e375]:
+              - button [ref=e376]:
+                - generic [ref=e378]: 
+              - button [ref=e379] [cursor=pointer]:
+                - generic [ref=e381]: 
+              - list [ref=e382]:
+                - listitem [ref=e383]:
+                  - button "1"
+                - listitem [ref=e384]:
+                  - button "2" [ref=e385] [cursor=pointer]
+    - contentinfo [ref=e386]:
+      - generic [ref=e388]:
+        - generic [ref=e391]:
+          - text: © 2026, JustBoil.me.
+          - link "GitHub" [ref=e392] [cursor=pointer]:
+            - /url: https://github.com/vikdiesel/admin-one-vue-bulma-dashboard
+        - link "JustBoil.me" [ref=e396] [cursor=pointer]:
+          - /url: https://justboil.me
+          - img "JustBoil.me" [ref=e397]
+  - alertdialog [ref=e398]:
+    - generic [ref=e399]: Welcome back
+    - button "OK" [ref=e401] [cursor=pointer]
