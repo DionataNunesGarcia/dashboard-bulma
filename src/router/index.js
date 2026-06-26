@@ -72,12 +72,40 @@ const routes = [
     component: () => import(/* webpackChunkName: "full-page" */ '@/views/FullPageView.vue'),
     children: [
       {
-        meta: {
-          title: 'Login'
-        },
+        meta: { title: 'Login' },
         path: '/login',
         name: 'login',
         component: () => import(/* webpackChunkName: "full-page" */ '@/views/full-page/LoginView.vue')
+      },
+      {
+        meta: { title: 'Register' },
+        path: '/register',
+        name: 'register',
+        component: () => import(/* webpackChunkName: "full-page" */ '@/views/full-page/RegisterView.vue')
+      },
+      {
+        meta: { title: '404' },
+        path: '/404',
+        name: 'error-404',
+        component: () => import(/* webpackChunkName: "full-page" */ '@/views/full-page/Error404View.vue')
+      },
+      {
+        meta: { title: 'Reset Password' },
+        path: '/reset-password',
+        name: 'reset-password',
+        component: () => import(/* webpackChunkName: "full-page" */ '@/views/full-page/ResetPasswordView.vue')
+      },
+      {
+        meta: { title: 'Verify OTP' },
+        path: '/verify-otp',
+        name: 'verify-otp',
+        component: () => import(/* webpackChunkName: "full-page" */ '@/views/full-page/VerifyOtpView.vue')
+      },
+      {
+        meta: { title: 'Maintenance' },
+        path: '/maintenance',
+        name: 'maintenance',
+        component: () => import(/* webpackChunkName: "full-page" */ '@/views/full-page/MaintenanceView.vue')
       }
     ]
   }

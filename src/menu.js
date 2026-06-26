@@ -31,9 +31,17 @@ export default [
       icon: 'account-circle'
     },
     {
-      to: '/login',
-      label: 'Login',
-      icon: 'lock'
+      label: 'Auth Pages',
+      subLabel: 'Login, Register, etc.',
+      icon: 'lock',
+      menu: [
+        { to: '/login', label: 'Login' },
+        { to: '/register', label: 'Register' },
+        { to: '/reset-password', label: 'Reset Password' },
+        { to: '/verify-otp', label: 'Verify OTP' },
+        { to: '/404', label: '404 Error' },
+        { to: '/maintenance', label: 'Maintenance' }
+      ]
     },
     {
       label: 'Submenus',
