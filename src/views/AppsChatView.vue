@@ -8,7 +8,7 @@
     <section class="section is-main-section">
       <div class="columns">
         <div class="column is-4">
-          <card-component title="Contacts" icon="account-multiple">
+          <card-component title="Contatos" icon="account-multiple">
             <div v-for="contact in contacts" :key="contact.id" class="is-flex is-align-items-center p-2 chat-contact" :class="{ 'has-background-info-light': selected === contact.id }" @click="selected = contact.id" style="cursor: pointer; border-radius: 6px;">
               <b-icon icon="account-circle" size="is-medium" :type="contact.online ? 'is-success' : 'is-grey-light'" />
               <div class="ml-3">
@@ -28,10 +28,10 @@
                 <br><small class="has-text-grey">{{ msg.time }}</small>
               </div>
             </div>
-            <div v-else class="has-text-centered has-text-grey py-6">Select a contact to start chatting</div>
+            <div v-else class="has-text-centered has-text-grey py-6">Selecione um contato para iniciar o chat</div>
             <hr v-if="selected">
             <div v-if="selected" class="is-flex">
-              <b-input v-model="newMessage" placeholder="Type a message..." class="is-flex-grow-1" @keyup.enter="sendMessage" />
+              <b-input v-model="newMessage" placeholder="Digite uma mensagem..." class="is-flex-grow-1" @keyup.enter="sendMessage" />
               <b-button type="is-info" icon-left="send" class="ml-2" @click="sendMessage" />
             </div>
           </card-component>
@@ -56,17 +56,17 @@ export default defineComponent({
       selected: null,
       newMessage: null,
       contacts: [
-        { id: 1, name: 'Alice Johnson', online: true, lastMessage: 'Hey, how are you?' },
-        { id: 2, name: 'Bob Smith', online: true, lastMessage: 'Sure, let me check' },
-        { id: 3, name: 'Carol White', online: false, lastMessage: 'Sounds good!' },
-        { id: 4, name: 'David Brown', online: true, lastMessage: 'Meeting at 3pm' },
-        { id: 5, name: 'Eve Davis', online: false, lastMessage: 'Thanks!' }
+        { id: 1, name: 'João (Prefeitura de Itapuã)', online: true, lastMessage: 'Recebemos a proposta?' },
+        { id: 2, name: 'Maria (Prefeitura de Mairinque)', online: true, lastMessage: 'Ok, vou analisar' },
+        { id: 3, name: 'Carlos (Prefeitura de São Roque)', online: false, lastMessage: 'Contrato assinado!' },
+        { id: 4, name: 'Ana (Prefeitura de Ibiúna)', online: true, lastMessage: 'Reunião às 14h' },
+        { id: 5, name: 'Pedro (Prefeitura de Alumínio)', online: false, lastMessage: 'Obrigado!' }
       ],
       messages: [
-        { text: 'Hey! How is the project going?', mine: false, time: '10:30 AM' },
-        { text: 'Going great! Almost done with the redesign.', mine: true, time: '10:32 AM' },
-        { text: 'Awesome, can you share a preview?', mine: false, time: '10:33 AM' },
-        { text: 'Sure, sending it over now.', mine: true, time: '10:35 AM' }
+        { text: 'Olá! Como está o andamento da licitação?', mine: false, time: '10:30' },
+        { text: 'Está indo bem. Quase finalizando a análise.', mine: true, time: '10:32' },
+        { text: 'Ótimo, pode compartilhar o relatório?', mine: false, time: '10:33' },
+        { text: 'Claro, enviando agora.', mine: true, time: '10:35' }
       ]
     }
   },

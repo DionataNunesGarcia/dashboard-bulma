@@ -2,35 +2,35 @@
   <div>
     <title-bar :title-stack="titleStack" />
     <hero-bar>
-      Payments
-      <router-link slot="right" to="/invoices/new" class="button is-primary">New Invoice</router-link>
+      Pagamentos
+      <router-link slot="right" to="/invoices/new" class="button is-primary">Nova Nota Fiscal</router-link>
     </hero-bar>
     <section class="section is-main-section">
       <tiles-block>
-        <card-widget class="tile is-child" type="is-success" icon="cash" :number="42500" prefix="$" label="Total Collected" />
-        <card-widget class="tile is-child" type="is-warning" icon="clock" :number="15300" prefix="$" label="Pending" />
-        <card-widget class="tile is-child" type="is-danger" icon="alert" :number="6200" prefix="$" label="Overdue" />
+        <card-widget class="tile is-child" type="is-success" icon="cash" :number="198500" prefix="R$ " label="Total Recebido" />
+        <card-widget class="tile is-child" type="is-warning" icon="clock" :number="122000" prefix="R$ " label="Pendente" />
+        <card-widget class="tile is-child" type="is-danger" icon="alert" :number="120000" prefix="R$ " label="Atrasado" />
       </tiles-block>
-      <card-component class="has-table has-mobile-sort-spaced" title="Payment History" icon="cash-multiple">
+      <card-component class="has-table has-mobile-sort-spaced" title="Histórico de Pagamentos" icon="cash-multiple">
         <b-table :data="payments" paginated backend-pagination :total="payments.length" per-page="10" :striped="true">
           <b-table-column field="id" label="#" width="80" numeric>
             <template v-slot:default="props">#{{ props.row.id }}</template>
           </b-table-column>
-          <b-table-column field="client" label="Client" sortable>
+          <b-table-column field="client" label="Prefeitura" sortable>
             <template v-slot:default="props">{{ props.row.client }}</template>
           </b-table-column>
-          <b-table-column field="amount" label="Amount" sortable>
-            <template v-slot:default="props">${{ props.row.amount }}</template>
+          <b-table-column field="amount" label="Valor" sortable>
+            <template v-slot:default="props">R$ {{ props.row.amount.toLocaleString('pt-BR') }}</template>
           </b-table-column>
-          <b-table-column field="method" label="Method">
+          <b-table-column field="method" label="Forma">
             <template v-slot:default="props">{{ props.row.method }}</template>
           </b-table-column>
-          <b-table-column field="date" label="Date" sortable>
+          <b-table-column field="date" label="Data" sortable>
             <template v-slot:default="props">{{ props.row.date }}</template>
           </b-table-column>
           <b-table-column field="status" label="Status" sortable>
             <template v-slot:default="props">
-              <b-tag :type="props.row.status === 'Completed' ? 'is-success' : 'is-warning'">{{ props.row.status }}</b-tag>
+              <b-tag :type="props.row.status === 'Recebido' ? 'is-success' : 'is-warning'">{{ props.row.status }}</b-tag>
             </template>
           </b-table-column>
         </b-table>
@@ -52,14 +52,15 @@ export default defineComponent({
   components: { TitleBar, HeroBar, TilesBlock, CardWidget, CardComponent },
   data () {
     return {
-      titleStack: ['Admin', 'Payments'],
+      titleStack: ['Admin', 'Pagamentos'],
       payments: [
-        { id: 1001, client: 'Acme Corp', amount: 5000, method: 'Credit Card', date: '2026-06-15', status: 'Completed' },
-        { id: 1002, client: 'CreativeLab', amount: 3400, method: 'Bank Transfer', date: '2026-05-22', status: 'Completed' },
-        { id: 1003, client: 'SalesForce Inc', amount: 6200, method: 'Credit Card', date: '2026-06-03', status: 'Completed' },
-        { id: 1004, client: 'TechStart', amount: 4000, method: 'PayPal', date: '2026-06-20', status: 'Pending' },
-        { id: 1005, client: 'DataFlow', amount: 2500, method: 'Credit Card', date: '2026-06-25', status: 'Pending' },
-        { id: 1006, client: 'CloudBase', amount: 8500, method: 'Bank Transfer', date: '2026-06-10', status: 'Completed' }
+        { id: 1001, client: 'Prefeitura de Itapuã', amount: 48000, method: 'Transferência', date: '2026-07-15', status: 'Recebido' },
+        { id: 1002, client: 'Prefeitura de São Roque', amount: 120000, method: 'Boleto', date: '2026-07-10', status: 'Recebido' },
+        { id: 1003, client: 'Prefeitura de Ibiúna', amount: 18000, method: 'Transferência', date: '2026-07-08', status: 'Recebido' },
+        { id: 1004, client: 'Prefeitura de Mairinque', amount: 25000, method: 'Boleto', date: '2026-07-30', status: 'Pendente' },
+        { id: 1005, client: 'Prefeitura de Votorantim', amount: 85000, method: 'Transferência', date: '2026-08-15', status: 'Pendente' },
+        { id: 1006, client: 'Prefeitura de Piedade', amount: 7500, method: 'Transferência', date: '2026-06-30', status: 'Recebido' },
+        { id: 1007, client: 'Prefeitura de Salto de Pirapora', amount: 12000, method: 'Boleto', date: '2026-07-25', status: 'Pendente' }
       ]
     }
   }

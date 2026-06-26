@@ -6,7 +6,7 @@
     </hero-bar>
     <section class="section is-main-section">
       <notification-bar class="is-info">
-        Please star this project on GitHub
+        Sistema de Licitações - Acompanhe as compras públicas das prefeituras
 
         <a
           slot="right"
@@ -26,30 +26,29 @@
         <card-widget
           class="tile is-child"
           type="is-primary"
-          icon="account-multiple"
-          :number="512"
-          label="Clients"
+          icon="alert-circle"
+          :number="10"
+          label="Licitações Ativas"
         />
         <card-widget
           class="tile is-child"
           type="is-info"
-          icon="cart-outline"
-          :number="7770"
-          prefix="$"
-          label="Sales"
+          icon="briefcase"
+          :number="8"
+          label="Contratos Vigentes"
         />
         <card-widget
           class="tile is-child"
           type="is-success"
           icon="chart-timeline-variant"
-          :number="256"
+          :number="12"
           suffix="%"
-          label="Performance"
+          label="Economia Gerada"
         />
       </tiles-block>
 
       <card-component
-        title="Performance"
+        title="Desempenho"
         icon="finance"
         header-icon="reload"
         @header-icon-click="fillChartData"
@@ -67,7 +66,7 @@
       </card-component>
 
       <card-component
-        title="Clients"
+        title="Prefeituras"
         class="has-table has-mobile-sort-spaced"
       >
         <clients-table-sample />
@@ -127,7 +126,7 @@ export default defineComponent({
     this.fillChartData()
 
     this.$buefy.snackbar.open({
-      message: 'Welcome back',
+      message: 'Bem-vindo ao Sistema de Licitações',
       queue: false
     })
   },

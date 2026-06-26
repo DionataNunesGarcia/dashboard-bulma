@@ -3,36 +3,34 @@
     <title-bar :title-stack="titleStack" />
     <hero-bar>
       {{ heroTitle }}
-      <router-link slot="right" to="/proposals" class="button">Back to Proposals</router-link>
+      <router-link slot="right" to="/proposals" class="button">Voltar para Propostas</router-link>
     </hero-bar>
     <section class="section is-main-section">
-      <notification-bar class="is-info"><span><b>Demo only.</b> No data will be saved</span></notification-bar>
+      <notification-bar class="is-info"><span><b>Apenas demonstração.</b> Nenhum dado será salvo</span></notification-bar>
       <card-component :title="formCardTitle" icon="at-sign" class="tile is-child">
         <form @submit.prevent="submit">
-          <b-field label="Title" horizontal required>
-            <b-input v-model="form.title" placeholder="e.g. Website Development" required />
+          <b-field label="Empresa" horizontal required>
+            <b-input v-model="form.empresa" placeholder="e.g. Comercial ABC Ltda" required />
           </b-field>
-          <b-field label="Client" horizontal>
-            <b-input v-model="form.client" placeholder="e.g. Acme Corp" />
+          <b-field label="Licitação" horizontal>
+            <b-input v-model="form.licitacao" placeholder="e.g. Pregão 001/2026" />
           </b-field>
-          <b-field label="Amount ($)" horizontal>
-            <b-input v-model="form.amount" type="number" placeholder="e.g. 25000" />
+          <b-field label="Valor Proposto (R$)" horizontal>
+            <b-input v-model="form.amount" type="number" placeholder="e.g. 500000" />
           </b-field>
           <b-field label="Status" horizontal>
             <b-select v-model="form.status">
-              <option value="Draft">Draft</option>
-              <option value="Sent">Sent</option>
-              <option value="Negotiating">Negotiating</option>
-              <option value="Accepted">Accepted</option>
-              <option value="Rejected">Rejected</option>
+              <option value="Em Análise">Em Análise</option>
+              <option value="Vencedora">Vencedora</option>
+              <option value="Perdedora">Perdedora</option>
             </b-select>
           </b-field>
-          <b-field label="Description" horizontal>
+          <b-field label="Descrição" horizontal>
             <b-input v-model="form.description" type="textarea" />
           </b-field>
           <hr>
           <b-field horizontal>
-            <b-button type="is-info" :loading="isLoading" native-type="submit">Submit</b-button>
+            <b-button type="is-info" :loading="isLoading" native-type="submit">Enviar</b-button>
           </b-field>
         </form>
       </card-component>
@@ -53,20 +51,20 @@ export default defineComponent({
   props: { id: { type: [String, Number], default: null } },
   data () {
     return {
-      isLoading: false, form: { title: null, client: null, amount: null, status: 'Draft', description: null }
+      isLoading: false, form: { empresa: null, licitacao: null, amount: null, status: 'Em Análise', description: null }
     }
   },
   computed: {
-    titleStack () { return ['Admin', 'Proposals', this.id ? 'Edit Proposal' : 'New Proposal'] },
-    heroTitle () { return this.id ? 'Edit Proposal' : 'Create Proposal' },
-    formCardTitle () { return this.id ? 'Edit Proposal' : 'New Proposal' }
+    titleStack () { return ['Admin', 'Propostas', this.id ? 'Editar Proposta' : 'Nova Proposta'] },
+    heroTitle () { return this.id ? 'Editar Proposta' : 'Criar Proposta' },
+    formCardTitle () { return this.id ? 'Editar Proposta' : 'Nova Proposta' }
   },
   methods: {
     submit () {
       this.isLoading = true
       setTimeout(() => {
         this.isLoading = false
-        this.$buefy.snackbar.open({ message: this.id ? 'Proposal updated (demo)' : 'Proposal created (demo)', type: 'is-success', queue: false })
+        this.$buefy.snackbar.open({ message: this.id ? 'Proposta atualizada (demonstração)' : 'Proposta criada (demonstração)', type: 'is-success', queue: false })
       }, 750)
     }
   }

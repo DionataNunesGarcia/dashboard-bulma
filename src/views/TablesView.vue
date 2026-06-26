@@ -2,7 +2,7 @@
   <div>
     <title-bar :title-stack="titleStack" />
     <hero-bar>
-      Tables
+      Tabelas
       <router-link
         slot="right"
         to="/"
@@ -18,13 +18,13 @@
             icon="buffer"
             custom-size="default"
           />
-          <b>Sorted and paginated table.</b>&nbsp;Based on Buefy's table.
+          <b>Tabela ordenada e paginada.</b>&nbsp;Baseada na tabela do Buefy.
         </div>
       </notification-bar>
 
       <card-component
         class="has-table has-mobile-sort-spaced"
-        title="Clients"
+        title="Fornecedores"
         icon="account-multiple"
       >
         <clients-table-sample
@@ -40,7 +40,7 @@
             icon="buffer"
             custom-size="default"
           />
-          <b>Tightly wrapped</b> &mdash; table header becomes card header
+          <b>Compacta</b> &mdash; cabeçalho da tabela vira cabeçalho do card
         </div>
       </notification-bar>
 
@@ -58,7 +58,7 @@
             icon="buffer"
             custom-size="default"
           />
-          <b>Empty table.</b> When there's nothing to show
+          <b>Tabela vazia.</b> Quando não há dados para exibir
         </div>
       </notification-bar>
 
@@ -88,7 +88,7 @@ export default defineComponent({
   },
   data () {
     return {
-      titleStack: ['Admin', 'Tables']
+      titleStack: ['Admin', 'Tabelas']
     }
   }
 })

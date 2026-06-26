@@ -14,7 +14,7 @@
     <section class="section is-main-section">
       <notification-bar class="is-info">
         <div>
-          <span><b>Demo only.</b> No data will be saved/updated</span>
+          <span><b>Apenas demonstração.</b> Nenhum dado será salvo/atualizado</span>
         </div>
       </notification-bar>
       <tiles-block>
@@ -43,52 +43,52 @@
             </b-field>
             <hr>
             <b-field
-              label="Name"
-              message="Client name"
+              label="Nome"
+              message="Nome do fornecedor"
               horizontal
             >
               <b-input
                 v-model="form.name"
-                placeholder="e.g. John Doe"
+                placeholder="e.g. João Silva"
                 required
               />
             </b-field>
             <b-field
-              label="Company"
-              message="Client's company name"
+              label="Empresa"
+              message="Razão social do fornecedor"
               horizontal
             >
               <b-input
                 v-model="form.company"
-                placeholder="e.g. Berton & Steinway"
+                placeholder="e.g. Comercial ABC Ltda"
                 required
               />
             </b-field>
             <b-field
-              label="City"
-              message="Client's city"
+              label="Cidade"
+              message="Cidade do fornecedor"
               horizontal
             >
               <b-input
                 v-model="form.city"
-                placeholder="e.g. Geoffreyton"
+                placeholder="e.g. Itapuã"
                 required
               />
             </b-field>
             <b-field
-              label="Created"
+              label="Criado em"
               horizontal
             >
               <b-datepicker
                 v-model="form.created_date"
-                placeholder="Click to select..."
+                placeholder="Clique para selecionar..."
                 icon="calendar-today"
                 @input="dateInput"
               />
             </b-field>
             <hr>
             <b-field
-              label="Progress"
+              label="Progresso"
               horizontal
             >
               <b-slider
@@ -103,14 +103,14 @@
                 :loading="isLoading"
                 native-type="submit"
               >
-                Submit
+                Enviar
               </b-button>
             </b-field>
           </form>
         </card-component>
         <card-component
           v-if="isProfileExists"
-          title="Client Profile"
+          title="Perfil do Fornecedor"
           icon="account"
           class="tile is-child"
         >
@@ -119,28 +119,28 @@
             class="image has-max-width is-aligned-center"
           />
           <hr>
-          <b-field label="Name">
+          <b-field label="Nome">
             <b-input
               :value="form.name"
               custom-class="is-static"
               readonly
             />
           </b-field>
-          <b-field label="Company">
+          <b-field label="Empresa">
             <b-input
               :value="form.company"
               custom-class="is-static"
               readonly
             />
           </b-field>
-          <b-field label="City">
+          <b-field label="Cidade">
             <b-input
               :value="form.city"
               custom-class="is-static"
               readonly
             />
           </b-field>
-          <b-field label="Created">
+          <b-field label="Criado em">
             <b-input
               :value="createdReadable"
               custom-class="is-static"
@@ -148,7 +148,7 @@
             />
           </b-field>
           <hr>
-          <b-field label="Progress">
+          <b-field label="Progresso">
             <b-progress
               :value="form.progress"
               type="is-info"
@@ -210,21 +210,21 @@ export default defineComponent({
     titleStack () {
       return [
         'Admin',
-        'Clients',
-        this.isProfileExists ? this.form.name : 'New Client'
+        'Fornecedores',
+        this.isProfileExists ? this.form.name : 'Novo Fornecedor'
       ]
     },
     heroTitle () {
-      return this.isProfileExists ? this.form.name : 'Create Client'
+      return this.isProfileExists ? this.form.name : 'Criar Fornecedor'
     },
     heroRouterLinkTo () {
       return this.isProfileExists ? { name: 'client.new' } : { name: 'home' }
     },
     heroRouterLinkLabel () {
-      return this.isProfileExists ? 'New client' : 'Dashboard'
+      return this.isProfileExists ? 'Novo fornecedor' : 'Dashboard'
     },
     formCardTitle () {
-      return this.isProfileExists ? 'Edit client' : 'Create client'
+      return this.isProfileExists ? 'Editar fornecedor' : 'Criar fornecedor'
     },
     ...mapState([
       'clients'
@@ -283,7 +283,7 @@ export default defineComponent({
         this.isLoading = false
 
         this.$buefy.snackbar.open({
-          message: 'Demo only',
+          message: 'Apenas demonstração',
           queue: false
         })
       }, 750)

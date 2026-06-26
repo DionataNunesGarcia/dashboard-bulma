@@ -3,19 +3,20 @@
     <title-bar :title-stack="titleStack" />
     <hero-bar>
       {{ project.name }}
-      <router-link slot="right" to="/projects" class="button">Back to Projects</router-link>
+      <router-link slot="right" to="/projects" class="button">Voltar para Contratos</router-link>
     </hero-bar>
     <section class="section is-main-section">
       <tiles-block>
-        <card-component title="Project Details" icon="briefcase" class="tile is-child">
+        <card-component title="Detalhes do Contrato" icon="briefcase" class="tile is-child">
           <b-field label="ID"><b-input :value="project.id" custom-class="is-static" readonly /></b-field>
-          <b-field label="Name"><b-input :value="project.name" custom-class="is-static" readonly /></b-field>
-          <b-field label="Client"><b-input :value="project.client" custom-class="is-static" readonly /></b-field>
+          <b-field label="Contrato"><b-input :value="project.name" custom-class="is-static" readonly /></b-field>
+          <b-field label="Prefeitura"><b-input :value="project.client" custom-class="is-static" readonly /></b-field>
+          <b-field label="Tipo"><b-input :value="project.tipo" custom-class="is-static" readonly /></b-field>
           <b-field label="Status"><b-tag :type="statusType(project.status)">{{ project.status }}</b-tag></b-field>
-          <b-field label="Budget"><b-input :value="`$${project.budget}`" custom-class="is-static" readonly /></b-field>
-          <b-field label="Deadline"><b-input :value="project.deadline" custom-class="is-static" readonly /></b-field>
+          <b-field label="Valor"><b-input :value="'R$ ' + project.budget.toLocaleString('pt-BR')" custom-class="is-static" readonly /></b-field>
+          <b-field label="Vigência"><b-input :value="project.deadline" custom-class="is-static" readonly /></b-field>
         </card-component>
-        <card-component title="Progress" icon="chart-timeline-variant" class="tile is-child">
+        <card-component title="Prazo de Execução" icon="chart-timeline-variant" class="tile is-child">
           <b-progress :value="project.progress" type="is-info" show-value format="percent" size="is-large" />
           <p class="has-text-grey mt-4">{{ project.description }}</p>
         </card-component>
@@ -37,27 +38,27 @@ export default defineComponent({
   props: { id: { type: [String, Number], default: null } },
   data () {
     return {
-      project: { id: null, name: null, client: null, status: null, budget: null, deadline: null, progress: 0, description: null }
+      project: { id: null, name: null, client: null, tipo: null, status: null, budget: null, deadline: null, progress: 0, description: null }
     }
   },
-  computed: { titleStack () { return ['Admin', 'Projects', this.project.name || 'Project'] } },
+  computed: { titleStack () { return ['Admin', 'Contratos', this.project.name || 'Contrato'] } },
   created () {
     const data = [
-      { id: 1, name: 'Website Redesign', client: 'Acme Corp', status: 'In Progress', budget: 15000, deadline: '2026-08-15', progress: 65, description: 'Complete redesign of corporate website with modern UI/UX.' },
-      { id: 2, name: 'Mobile App Development', client: 'TechStart', status: 'Planning', budget: 45000, deadline: '2026-12-01', progress: 15, description: 'Cross-platform mobile app for inventory management.' },
-      { id: 3, name: 'CRM Integration', client: 'SalesForce Inc', status: 'Completed', budget: 22000, deadline: '2026-05-30', progress: 100, description: 'Salesforce CRM integration with existing ERP system.' },
-      { id: 4, name: 'Data Migration', client: 'CloudBase', status: 'In Progress', budget: 18000, deadline: '2026-09-01', progress: 40, description: 'Migration of legacy data to cloud infrastructure.' },
-      { id: 5, name: 'E-commerce Platform', client: 'ShopEasy', status: 'On Hold', budget: 55000, deadline: '2027-01-15', progress: 30, description: 'Full-featured e-commerce platform with payment gateway.' },
-      { id: 6, name: 'Brand Identity', client: 'CreativeLab', status: 'Completed', budget: 8500, deadline: '2026-04-20', progress: 100, description: 'Complete brand identity package including logo and guidelines.' },
-      { id: 7, name: 'Security Audit', client: 'SafeNet', status: 'Planning', budget: 12000, deadline: '2026-07-30', progress: 10, description: 'Comprehensive security audit and penetration testing.' },
-      { id: 8, name: 'API Development', client: 'DataFlow', status: 'In Progress', budget: 28000, deadline: '2026-10-01', progress: 55, description: 'RESTful API development for data analytics platform.' }
+      { id: 1, name: 'CT-001/2026', client: 'Prefeitura de Itapuã', tipo: 'Alimentação', status: 'Ativo', budget: 480000, deadline: '2026-12-31', progress: 45, description: 'Fornecimento de merenda escolar para rede municipal de ensino.' },
+      { id: 2, name: 'CT-002/2026', client: 'Prefeitura de Mairinque', tipo: 'Combustível', status: 'Ativo', budget: 250000, deadline: '2026-11-30', progress: 55, description: 'Fornecimento de combustível para frota municipal.' },
+      { id: 3, name: 'CT-003/2026', client: 'Prefeitura de São Roque', tipo: 'Construção Civil', status: 'Em Execução', budget: 1200000, deadline: '2027-06-30', progress: 30, description: 'Reforma e ampliação da escola municipal.' },
+      { id: 4, name: 'CT-004/2026', client: 'Prefeitura de Ibiúna', tipo: 'Saúde', status: 'Encerrado', budget: 180000, deadline: '2026-03-31', progress: 100, description: 'Fornecimento de medicamentos para farmácia básica.' },
+      { id: 5, name: 'CT-005/2026', client: 'Prefeitura de Votorantim', tipo: 'Veículos', status: 'Ativo', budget: 850000, deadline: '2026-10-15', progress: 60, description: 'Aquisição de veículos utilitários para secretarias.' },
+      { id: 6, name: 'CT-006/2026', client: 'Prefeitura de Piedade', tipo: 'Papelaria', status: 'Encerrado', budget: 45000, deadline: '2026-02-28', progress: 100, description: 'Fornecimento de material de escritório.' },
+      { id: 7, name: 'CT-007/2026', client: 'Prefeitura de Alumínio', tipo: 'Gás', status: 'Ativo', budget: 95000, deadline: '2026-12-31', progress: 40, description: 'Fornecimento de gás de cozinha para escolas municipais.' },
+      { id: 8, name: 'CT-008/2026', client: 'Prefeitura de Salto de Pirapora', tipo: 'Vestuário', status: 'Em Execução', budget: 120000, deadline: '2027-01-31', progress: 25, description: 'Fornecimento de uniformes escolares para rede municipal.' }
     ]
     const item = data.find(p => p.id === parseInt(this.id))
     if (item) this.project = item
   },
   methods: {
     statusType (s) {
-      const map = { 'Planning': 'is-info', 'In Progress': 'is-warning', 'Completed': 'is-success', 'On Hold': 'is-danger' }
+      const map = { 'Ativo': 'is-success', 'Em Execução': 'is-warning', 'Encerrado': 'is-grey' }
       return map[s] || 'is-light'
     }
   }

@@ -2,7 +2,7 @@
   <div>
     <title-bar :title-stack="titleStack" />
     <hero-bar>
-      Forms
+      Formulários
       <router-link
         slot="right"
         to="/"
@@ -13,19 +13,19 @@
     </hero-bar>
     <section class="section is-main-section">
       <card-component
-        title="Forms"
+        title="Formulários"
         icon="ballot"
       >
         <form @submit.prevent="formAction">
           <b-field
-            label="From"
+            label="De"
             horizontal
           >
             <b-field>
               <b-input
                 v-model="form.name"
                 icon="account"
-                placeholder="Name"
+                placeholder="Nome"
                 name="name"
                 required
               />
@@ -42,13 +42,13 @@
             </b-field>
           </b-field>
           <b-field
-            message="Do not enter the leading zero"
+            message="Não inclua o zero inicial"
             horizontal
           >
             <b-field>
               <p class="control">
                 <a class="button is-static">
-                  +44
+                  +55
                 </a>
               </p>
               <b-input
@@ -60,12 +60,12 @@
             </b-field>
           </b-field>
           <b-field
-            label="Department"
+            label="Departamento"
             horizontal
           >
             <b-select
               v-model="form.department"
-              placeholder="Select a department"
+              placeholder="Selecione um departamento"
               required
             >
               <option
@@ -79,25 +79,25 @@
           </b-field>
           <hr>
           <b-field
-            label="Subject"
-            message="Message subject"
+            label="Assunto"
+            message="Assunto da mensagem"
             horizontal
           >
             <b-input
               v-model="form.subject"
-              placeholder="e.g. Partnership proposal"
+              placeholder="e.g. Proposta de parceria"
               required
             />
           </b-field>
           <b-field
-            label="Question"
-            message="Your question. Max 255 characters"
+            label="Pergunta"
+            message="Sua pergunta. Máx. 255 caracteres"
             horizontal
           >
             <b-input
               v-model="form.question"
               type="textarea"
-              placeholder="Explain how we can help you"
+              placeholder="Explique como podemos ajudá-lo"
               maxlength="255"
               required
             />
@@ -110,7 +110,7 @@
                   native-type="submit"
                   type="is-info"
                 >
-                  Submit
+                  Enviar
                 </b-button>
               </div>
               <div class="control">
@@ -118,7 +118,7 @@
                   type="is-info is-outlined"
                   @click.prevent="formAction"
                 >
-                  Reset
+                  Limpar
                 </b-button>
               </div>
             </b-field>
@@ -126,7 +126,7 @@
         </form>
       </card-component>
       <card-component
-        title="Custom elements"
+        title="Elementos Personalizados"
         icon="ballot-outline"
       >
         <b-field
@@ -148,7 +148,7 @@
         >
           <checkbox-radio-picker
             v-model="customElementsForm.radio"
-            :options="{ one: 'One', two: 'Two' }"
+            :options="{ one: 'Um', two: 'Dois' }"
             type="is-info"
           />
         </b-field>
@@ -161,12 +161,12 @@
             v-model="customElementsForm.switch"
             type="is-info"
           >
-            Default
+            Padrão
           </b-switch>
         </b-field>
         <hr>
         <b-field
-          label="File"
+          label="Arquivo"
           horizontal
         >
           <file-picker
@@ -198,8 +198,8 @@ export default defineComponent({
   },
   data () {
     return {
-      titleStack: ['Admin', 'Forms'],
-      departments: ['Business Development', 'Marketing', 'Sales'],
+      titleStack: ['Admin', 'Formulários'],
+      departments: ['Desenvolvimento de Negócios', 'Marketing', 'Vendas'],
       form: {
         name: null,
         email: null,
@@ -219,7 +219,7 @@ export default defineComponent({
   methods: {
     formAction () {
       this.$buefy.snackbar.open({
-        message: 'Demo only',
+        message: 'Apenas demonstração',
         queue: false
       })
     }

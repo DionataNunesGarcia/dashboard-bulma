@@ -2,14 +2,14 @@
   <div>
     <title-bar :title-stack="titleStack" />
     <hero-bar>
-      Calendar
+      Calendário
       <router-link slot="right" to="/" class="button">Dashboard</router-link>
     </hero-bar>
     <section class="section is-main-section">
       <div class="columns">
         <div class="column is-3">
-          <card-component title="Events" icon="calendar">
-            <b-button type="is-info" expanded class="mb-4" icon-left="plus" @click="showModal = true">Add Event</b-button>
+          <card-component title="Eventos" icon="calendar">
+            <b-button type="is-info" expanded class="mb-4" icon-left="plus" @click="showModal = true">Adicionar Evento</b-button>
             <div v-for="(evt, i) in events" :key="i" class="mb-2 p-2" style="border-left: 4px solid; border-radius: 4px;" :style="`border-color: ${evt.color}`">
               <strong>{{ evt.title }}</strong><br>
               <small class="has-text-grey">{{ evt.date }}</small>
@@ -17,11 +17,11 @@
           </card-component>
         </div>
         <div class="column is-9">
-          <card-component title="Calendar" icon="calendar-month">
+          <card-component title="Calendário" icon="calendar-month">
             <div class="has-text-centered">
               <h4 class="title is-4 mb-4">{{ currentMonthLabel }}</h4>
               <div class="columns is-multipart is-mobile" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;">
-                <div v-for="day in ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']" :key="day" class="has-text-weight-bold has-text-grey p-2">{{ day }}</div>
+                <div v-for="day in ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb']" :key="day" class="has-text-weight-bold has-text-grey p-2">{{ day }}</div>
                 <div v-for="(day, i) in calendarDays" :key="i" class="p-2" :class="{ 'has-background-info-light': day.hasEvent, 'has-text-grey-light': !day.isCurrentMonth }" style="border-radius: 6px; min-height: 60px;">
                   <span class="is-size-6">{{ day.number }}</span>
                   <div v-if="day.hasEvent" class="mt-1"><b-tag size="is-small" type="is-info">●</b-tag></div>
@@ -32,19 +32,19 @@
         </div>
       </div>
       <b-modal v-model="showModal" :can-cancel="['x']">
-        <card-component title="Add Event" icon="calendar-plus">
+        <card-component title="Adicionar Evento" icon="calendar-plus">
           <form @submit.prevent="addEvent">
-            <b-field label="Title"><b-input v-model="newEvent.title" required /></b-field>
-            <b-field label="Date"><b-datepicker v-model="newEvent.date" /></b-field>
-            <b-field label="Color">
+            <b-field label="Título"><b-input v-model="newEvent.title" required /></b-field>
+            <b-field label="Data"><b-datepicker v-model="newEvent.date" /></b-field>
+            <b-field label="Cor">
               <b-select v-model="newEvent.color">
-                <option value="#00D1B2">Green</option>
-                <option value="#209CEE">Blue</option>
-                <option value="#FF3860">Red</option>
-                <option value="#FFDD57">Yellow</option>
+                <option value="#00D1B2">Verde</option>
+                <option value="#209CEE">Azul</option>
+                <option value="#FF3860">Vermelho</option>
+                <option value="#FFDD57">Amarelo</option>
               </b-select>
             </b-field>
-            <b-button type="is-info" native-type="submit">Add Event</b-button>
+            <b-button type="is-info" native-type="submit">Adicionar Evento</b-button>
           </form>
         </card-component>
       </b-modal>
@@ -63,20 +63,20 @@ export default defineComponent({
   components: { TitleBar, HeroBar, CardComponent },
   data () {
     return {
-      titleStack: ['Admin', 'Apps', 'Calendar'],
+      titleStack: ['Admin', 'Apps', 'Calendário'],
       showModal: false,
       currentDate: new Date(),
       newEvent: { title: null, date: new Date(), color: '#00D1B2' },
       events: [
-        { title: 'Team Meeting', date: '2026-06-26', color: '#00D1B2' },
-        { title: 'Client Presentation', date: '2026-06-28', color: '#209CEE' },
-        { title: 'Project Deadline', date: '2026-06-30', color: '#FF3860' }
+        { title: 'Abertura Pregão 001/2026', date: '2026-06-28', color: '#00D1B2' },
+        { title: 'Reunião Prefeitura de Itapuã', date: '2026-06-28', color: '#209CEE' },
+        { title: 'Prazo Concorrência 002/2026', date: '2026-06-30', color: '#FF3860' }
       ]
     }
   },
   computed: {
     currentMonthLabel () {
-      return this.currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+      return this.currentDate.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })
     },
     calendarDays () {
       const year = this.currentDate.getFullYear()
@@ -102,7 +102,7 @@ export default defineComponent({
     addEvent () {
       const d = this.newEvent.date
       this.events.push({ title: this.newEvent.title, date: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`, color: this.newEvent.color })
-      this.$buefy.snackbar.open({ message: 'Event added', type: 'is-success', queue: false })
+      this.$buefy.snackbar.open({ message: 'Evento adicionado', type: 'is-success', queue: false })
       this.showModal = false
       this.newEvent = { title: null, date: new Date(), color: '#00D1B2' }
     }

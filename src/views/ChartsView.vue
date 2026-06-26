@@ -2,7 +2,7 @@
   <div>
     <title-bar :title-stack="titleStack" />
     <hero-bar>
-      Charts
+      Gráficos
       <router-link slot="right" to="/" class="button">Dashboard</router-link>
     </hero-bar>
     <section class="section is-main-section">
@@ -18,7 +18,7 @@
       <div class="columns is-multiline">
 
         <div class="column is-8">
-          <card-component title="Vendas Mensais" icon="chart-bar">
+          <card-component title="Compras Mensais por Tipo" icon="chart-bar">
             <div v-if="barChartData" class="chart-area">
               <bar-chart
                 :chart-data="barChartData"
@@ -30,7 +30,7 @@
         </div>
 
         <div class="column is-4">
-          <card-component title="Distribuição de Produtos" icon="chart-pie">
+          <card-component title="Distribuição de Gastos" icon="chart-pie">
             <div v-if="doughnutChartData" class="chart-area">
               <doughnut-chart
                 :chart-data="doughnutChartData"
@@ -42,7 +42,7 @@
         </div>
 
         <div class="column is-6">
-          <card-component title="Meta vs Realizado por Vendedor" icon="account-tie">
+          <card-component title="Meta vs Realizado por Fornecedor" icon="account-tie">
             <div v-if="horizontalBarData" class="chart-area">
               <bar-chart
                 :chart-data="horizontalBarData"
@@ -54,7 +54,7 @@
         </div>
 
         <div class="column is-6">
-          <card-component title="Orçamento por Departamento" icon="finance">
+          <card-component title="Orçamento por Secretaria" icon="finance">
             <div v-if="pieChartData" class="chart-area">
               <pie-chart
                 :chart-data="pieChartData"
@@ -66,7 +66,7 @@
         </div>
 
         <div class="column is-6">
-          <card-component title="Composição de Vendas por Produto" icon="layers">
+          <card-component title="Composição de Compras por Tipo" icon="layers">
             <div v-if="stackedBarData" class="chart-area">
               <bar-chart
                 :chart-data="stackedBarData"
@@ -78,7 +78,7 @@
         </div>
 
         <div class="column is-6">
-          <card-component title="Crescimento de Usuários" icon="account-multiple">
+          <card-component title="Crescimento de Fornecedores" icon="account-multiple">
             <div v-if="areaChartData" class="chart-area">
               <line-chart
                 :chart-data="areaChartData"
@@ -114,7 +114,7 @@
         </div>
 
         <div class="column is-6">
-          <card-component title="Performance vs Tempo de Mercado" icon="chart-bell-curve">
+          <card-component title="Performance vs Tempo de Fornecimento" icon="chart-bell-curve">
             <div v-if="scatterChartData" class="chart-area">
               <scatter-chart
                 :chart-data="scatterChartData"
@@ -205,7 +205,7 @@ export default defineComponent({
   },
   data () {
     return {
-      titleStack: ['Admin', 'Charts'],
+      titleStack: ['Admin', 'Gráficos'],
       barChartData: null,
       barChartOptions: chartConfig.barChartOptions,
       horizontalBarData: null,

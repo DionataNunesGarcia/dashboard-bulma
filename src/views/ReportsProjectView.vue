@@ -2,33 +2,33 @@
   <div>
     <title-bar :title-stack="titleStack" />
     <hero-bar>
-      Project Report
+      Relatório de Contratos
       <router-link slot="right" to="/" class="button">Dashboard</router-link>
     </hero-bar>
     <section class="section is-main-section">
       <tiles-block>
-        <card-widget class="tile is-child" type="is-primary" icon="briefcase" :number="12" label="Active Projects" />
-        <card-widget class="tile is-child" type="is-success" icon="check-circle" :number="8" label="Completed" />
-        <card-widget class="tile is-child" type="is-warning" icon="clock" :number="92" suffix="%" label="On-Time Rate" />
+        <card-widget class="tile is-child" type="is-primary" icon="briefcase" :number="8" label="Contratos Ativos" />
+        <card-widget class="tile is-child" type="is-success" icon="check-circle" :number="5" label="Encerrados" />
+        <card-widget class="tile is-child" type="is-warning" icon="clock" :number="95" suffix="%" label="Adimplência" />
       </tiles-block>
-      <card-component title="Project Status Overview" icon="chart-bar">
+      <card-component title="Visão Geral dos Contratos" icon="chart-bar">
         <div class="chart-area" style="min-height: 250px">
           <bar-chart :chart-data="barData" :chart-options="barOptions" />
         </div>
       </card-component>
-      <card-component class="has-table has-mobile-sort-spaced mt-4" title="Project List" icon="table">
+      <card-component class="has-table has-mobile-sort-spaced mt-4" title="Lista de Contratos" icon="table">
         <b-table :data="projects" paginated backend-pagination :total="projects.length" per-page="8" :striped="true">
-          <b-table-column field="name" label="Project" sortable>
+          <b-table-column field="name" label="Contrato" sortable>
             <template v-slot:default="props">{{ props.row.name }}</template>
           </b-table-column>
           <b-table-column field="status" label="Status" sortable>
             <template v-slot:default="props"><b-tag :type="statusType(props.row.status)">{{ props.row.status }}</b-tag></template>
           </b-table-column>
-          <b-table-column field="progress" label="Progress" sortable>
+          <b-table-column field="progress" label="Execução" sortable>
             <template v-slot:default="props"><b-progress :value="props.row.progress" :type="progressType(props.row.progress)" show-value format="percent" /></template>
           </b-table-column>
-          <b-table-column field="budget" label="Budget" sortable>
-            <template v-slot:default="props">${{ props.row.budget }}</template>
+          <b-table-column field="budget" label="Valor" sortable>
+            <template v-slot:default="props">R$ {{ props.row.budget.toLocaleString('pt-BR') }}</template>
           </b-table-column>
         </b-table>
       </card-component>
@@ -50,26 +50,26 @@ export default defineComponent({
   components: { TitleBar, HeroBar, TilesBlock, CardWidget, CardComponent, BarChart },
   data () {
     return {
-      titleStack: ['Admin', 'Reports', 'Projects'],
+      titleStack: ['Admin', 'Relatórios', 'Contratos'],
       barOptions: { responsive: true, maintainAspectRatio: true, scales: { y: { beginAtZero: true } }, plugins: { legend: { position: 'bottom' } } },
       barData: {
-        labels: ['Planning', 'In Progress', 'Review', 'Completed', 'On Hold'],
-        datasets: [{ label: 'Projects', backgroundColor: '#00D1B2', borderRadius: 4, data: [3, 5, 2, 8, 2] }]
+        labels: ['Alimentação', 'Combustível', 'Construção Civil', 'Veículos', 'Saúde'],
+        datasets: [{ label: 'Contratos', backgroundColor: '#00D1B2', borderRadius: 4, data: [3, 2, 2, 1, 1] }]
       },
       projects: [
-        { name: 'Website Redesign', status: 'In Progress', progress: 65, budget: 15000 },
-        { name: 'Mobile App Development', status: 'Planning', progress: 15, budget: 45000 },
-        { name: 'CRM Integration', status: 'Completed', progress: 100, budget: 22000 },
-        { name: 'Data Migration', status: 'In Progress', progress: 40, budget: 18000 },
-        { name: 'E-commerce Platform', status: 'On Hold', progress: 30, budget: 55000 },
-        { name: 'Brand Identity', status: 'Completed', progress: 100, budget: 8500 },
-        { name: 'Security Audit', status: 'Planning', progress: 10, budget: 12000 },
-        { name: 'API Development', status: 'In Progress', progress: 55, budget: 28000 }
+        { name: 'CT-001/2026', status: 'Ativo', progress: 45, budget: 480000 },
+        { name: 'CT-002/2026', status: 'Ativo', progress: 55, budget: 250000 },
+        { name: 'CT-003/2026', status: 'Em Execução', progress: 30, budget: 1200000 },
+        { name: 'CT-004/2026', status: 'Encerrado', progress: 100, budget: 180000 },
+        { name: 'CT-005/2026', status: 'Ativo', progress: 60, budget: 850000 },
+        { name: 'CT-006/2026', status: 'Encerrado', progress: 100, budget: 45000 },
+        { name: 'CT-007/2026', status: 'Ativo', progress: 40, budget: 95000 },
+        { name: 'CT-008/2026', status: 'Em Execução', progress: 25, budget: 120000 }
       ]
     }
   },
   methods: {
-    statusType (s) { const map = { Planning: 'is-info', 'In Progress': 'is-warning', Completed: 'is-success', 'On Hold': 'is-danger' }; return map[s] || 'is-light' },
+    statusType (s) { const map = { 'Ativo': 'is-success', 'Em Execução': 'is-warning', 'Encerrado': 'is-grey' }; return map[s] || 'is-light' },
     progressType (v) { if (v >= 100) return 'is-success'; if (v >= 50) return 'is-info'; return 'is-warning' }
   }
 })
