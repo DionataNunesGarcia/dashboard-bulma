@@ -115,6 +115,17 @@ const routes = [
     name: 'payments',
     component: () => import(/* webpackChunkName: "payments" */ '@/views/PaymentsView.vue')
   },
+  { meta: { title: 'Sales Report' }, path: '/reports/sales', name: 'reports.sales', component: () => import(/* webpackChunkName: "reports" */ '@/views/ReportsSalesView.vue') },
+  { meta: { title: 'Leads Report' }, path: '/reports/leads', name: 'reports.leads', component: () => import(/* webpackChunkName: "reports" */ '@/views/ReportsLeadsView.vue') },
+  { meta: { title: 'Project Report' }, path: '/reports/projects', name: 'reports.projects', component: () => import(/* webpackChunkName: "reports" */ '@/views/ReportsProjectView.vue') },
+  { meta: { title: 'Timesheets Report' }, path: '/reports/timesheets', name: 'reports.timesheets', component: () => import(/* webpackChunkName: "reports" */ '@/views/ReportsTimesheetsView.vue') },
+  { meta: { title: 'Chat' }, path: '/apps/chat', name: 'apps.chat', component: () => import(/* webpackChunkName: "apps" */ '@/views/AppsChatView.vue') },
+  { meta: { title: 'Email' }, path: '/apps/email', name: 'apps.email', component: () => import(/* webpackChunkName: "apps" */ '@/views/AppsEmailView.vue') },
+  { meta: { title: 'Tasks' }, path: '/apps/tasks', name: 'apps.tasks', component: () => import(/* webpackChunkName: "apps" */ '@/views/AppsTasksView.vue') },
+  { meta: { title: 'Notes' }, path: '/apps/notes', name: 'apps.notes', component: () => import(/* webpackChunkName: "apps" */ '@/views/AppsNotesView.vue') },
+  { meta: { title: 'Calendar' }, path: '/apps/calendar', name: 'apps.calendar', component: () => import(/* webpackChunkName: "apps" */ '@/views/AppsCalendarView.vue') },
+  { meta: { title: 'Settings' }, path: '/settings', name: 'settings', component: () => import(/* webpackChunkName: "settings" */ '@/views/SettingsView.vue') },
+  { meta: { title: 'Help' }, path: '/help', name: 'help', component: () => import(/* webpackChunkName: "help" */ '@/views/HelpView.vue') },
   {
     meta: {
       title: 'Charts'
