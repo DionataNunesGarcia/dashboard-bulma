@@ -10,6 +10,11 @@ export default [
   'Examples',
   [
     {
+      to: '/charts',
+      label: 'Charts',
+      icon: 'chart-bar'
+    },
+    {
       to: '/tables',
       label: 'Tables',
       icon: 'table',

@@ -28,6 +28,14 @@ const routes = [
   },
   {
     meta: {
+      title: 'Charts'
+    },
+    path: '/charts',
+    name: 'charts',
+    component: () => import(/* webpackChunkName: "charts" */ '@/views/ChartsView.vue')
+  },
+  {
+    meta: {
       title: 'Forms'
     },
     path: '/forms',
