@@ -27,6 +27,95 @@ const routes = [
     component: () => import(/* webpackChunkName: "tables" */ '@/views/TablesView.vue')
   },
   {
+    meta: { title: 'Leads' },
+    path: '/leads',
+    name: 'leads',
+    component: () => import(/* webpackChunkName: "leads" */ '@/views/LeadsView.vue')
+  },
+  {
+    meta: { title: 'Lead' },
+    path: '/leads/new',
+    name: 'leads.new',
+    component: () => import(/* webpackChunkName: "leads" */ '@/views/LeadFormView.vue')
+  },
+  {
+    meta: { title: 'Lead' },
+    path: '/leads/:id',
+    name: 'leads.view',
+    component: () => import(/* webpackChunkName: "leads" */ '@/views/LeadView.vue'),
+    props: true
+  },
+  {
+    meta: { title: 'Projects' },
+    path: '/projects',
+    name: 'projects',
+    component: () => import(/* webpackChunkName: "projects" */ '@/views/ProjectsView.vue')
+  },
+  {
+    meta: { title: 'Project' },
+    path: '/projects/new',
+    name: 'projects.new',
+    component: () => import(/* webpackChunkName: "projects" */ '@/views/ProjectFormView.vue')
+  },
+  {
+    meta: { title: 'Project' },
+    path: '/projects/:id',
+    name: 'projects.view',
+    component: () => import(/* webpackChunkName: "projects" */ '@/views/ProjectView.vue'),
+    props: true
+  },
+  {
+    meta: { title: 'Proposals' },
+    path: '/proposals',
+    name: 'proposals',
+    component: () => import(/* webpackChunkName: "proposals" */ '@/views/ProposalsView.vue')
+  },
+  {
+    meta: { title: 'Proposal' },
+    path: '/proposals/new',
+    name: 'proposals.new',
+    component: () => import(/* webpackChunkName: "proposals" */ '@/views/ProposalFormView.vue')
+  },
+  {
+    meta: { title: 'Proposal' },
+    path: '/proposals/:id',
+    name: 'proposals.view',
+    component: () => import(/* webpackChunkName: "proposals" */ '@/views/ProposalView.vue'),
+    props: true
+  },
+  {
+    meta: { title: 'Proposal Edit' },
+    path: '/proposals/:id/edit',
+    name: 'proposals.edit',
+    component: () => import(/* webpackChunkName: "proposals" */ '@/views/ProposalFormView.vue'),
+    props: true
+  },
+  {
+    meta: { title: 'Invoices' },
+    path: '/invoices',
+    name: 'invoices',
+    component: () => import(/* webpackChunkName: "invoices" */ '@/views/InvoicesView.vue')
+  },
+  {
+    meta: { title: 'Invoice' },
+    path: '/invoices/new',
+    name: 'invoices.new',
+    component: () => import(/* webpackChunkName: "invoices" */ '@/views/InvoiceFormView.vue')
+  },
+  {
+    meta: { title: 'Invoice' },
+    path: '/invoices/:id',
+    name: 'invoices.view',
+    component: () => import(/* webpackChunkName: "invoices" */ '@/views/InvoiceView.vue'),
+    props: true
+  },
+  {
+    meta: { title: 'Payments' },
+    path: '/payments',
+    name: 'payments',
+    component: () => import(/* webpackChunkName: "payments" */ '@/views/PaymentsView.vue')
+  },
+  {
     meta: {
       title: 'Charts'
     },
